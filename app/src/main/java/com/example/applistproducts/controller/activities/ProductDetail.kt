@@ -35,9 +35,9 @@ class ProductDetail : AppCompatActivity() {
 
         val picBuilder = Picasso.Builder(context)
         picBuilder.downloader(OkHttp3Downloader(context))
-        picBuilder.build().load(productObject?.logo).into(ivLogoDetail)
+        picBuilder.build().load(productObject?.image).into(ivLogoDetail)
 
-        tvNameDetail.text = productObject?.name
+        tvNameDetail.text = productObject?.title
         tvVenueName.text = productObject?.venueName
 
         fabSave.setOnClickListener {

@@ -35,11 +35,11 @@ class ProductAdapter(val products: List<Product>, val context: Context, val item
 
     override fun onBindViewHolder(holder: ProductAdapter.ViewHolder, position: Int) {
         val product = products[position]
-        holder.tvName.text = product.name
+        holder.tvName.text = product.title
 
         val picBuilder = Picasso.Builder(context)
         picBuilder.downloader(OkHttp3Downloader(context))
-        picBuilder.build().load(product.logo).into(holder.ivLogo)
+        picBuilder.build().load(product.image).into(holder.ivLogo)
 
         holder.cvProduct.setOnClickListener {
             itemClickListener.onItemClicked(product)

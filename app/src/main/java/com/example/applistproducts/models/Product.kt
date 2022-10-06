@@ -14,11 +14,11 @@ class Product (
     val productId: Int = 0,
 
     @SerializedName("title")
-    val name: String,
+    val title: String,
 
-    @SerializedName("logo")
-    val logo: String,
+    @SerializedName("image")
+    val image: String,
 
-    @SerializedName("venue_name")
+    @SerializedName("image_type")
     val venueName: String
 ): Serializable
