@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.applistproducts.R
+import com.example.applistproducts.adapter.ProductAdapter
+import com.example.applistproducts.controller.activities.ProductDetail
 import com.example.applistproducts.models.ApiResponseHeader
 import com.example.applistproducts.models.Product
 import com.example.applistproducts.network.ProductService
