@@ -12,7 +12,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 
-class TeamDetail : AppCompatActivity() {
+class ProductDetail : AppCompatActivity() {
     lateinit var ivLogoDetail: ImageView
     lateinit var tvNameDetail: TextView
     lateinit var tvVenueName: TextView

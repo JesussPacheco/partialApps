@@ -11,7 +11,7 @@ import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.prototype_team.view.*
 
-class TeamAdapter(val teams: List<Team>, val context: Context, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<TeamAdapter.ViewHolder>() {
+class ProductAdapter(val teams: List<Team>, val context: Context, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         val ivLogo = view.ivLogo
         val tvName = view.tvName
@@ -22,7 +22,7 @@ class TeamAdapter(val teams: List<Team>, val context: Context, val itemClickList
         fun onItemClicked(team: Team)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductAdapter.ViewHolder {
         val view = LayoutInflater.from(context)
             .inflate(R.layout.prototype_team, parent, false)
 
@@ -33,7 +33,7 @@ class TeamAdapter(val teams: List<Team>, val context: Context, val itemClickList
         return teams.size
     }
 
-    override fun onBindViewHolder(holder: TeamAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ProductAdapter.ViewHolder, position: Int) {
         val team = teams[position]
         holder.tvName.text = team.name
 

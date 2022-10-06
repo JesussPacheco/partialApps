@@ -11,8 +11,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfutbolperu.R
-import com.example.appfutbolperu.adapter.TeamAdapter
-import com.example.appfutbolperu.controller.activities.TeamDetail
+import com.example.appfutbolperu.adapter.ProductAdapter
+import com.example.appfutbolperu.controller.activities.ProductDetail
 import com.example.appfutbolperu.models.ApiResponseHeader
 import com.example.appfutbolperu.models.Team
 import com.example.appfutbolperu.network.TeamService
@@ -23,7 +23,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class TeamFragment : Fragment(), TeamAdapter.OnItemClickListener {
+class ProductFragment : Fragment(), ProductAdapter.OnItemClickListener {
     var team: List<Team> = ArrayList()
     lateinit var recyclerView: RecyclerView
 
@@ -65,7 +65,7 @@ class TeamFragment : Fragment(), TeamAdapter.OnItemClickListener {
                 if (responseDetails.isSuccessful) {
                     val teams: List<Team> = responseDetails.body()!!.api.teams ?: ArrayList()
                     recyclerView.layoutManager = LinearLayoutManager(context)
-                    recyclerView.adapter = TeamAdapter(teams, context, this@TeamFragment)
+                    recyclerView.adapter = ProductAdapter(teams, context, this@ProductFragment)
                 }
 
                 else{
@@ -76,7 +76,7 @@ class TeamFragment : Fragment(), TeamAdapter.OnItemClickListener {
     }
 
     override fun onItemClicked(team: Team) {
-        val intent = Intent(context, TeamDetail::class.java)
+        val intent = Intent(context, ProductDetail::class.java)
         intent.putExtra("Team", team)
         startActivity(intent)
     }

@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfutbolperu.R
-import com.example.appfutbolperu.adapter.TeamAdapter
+import com.example.appfutbolperu.adapter.ProductAdapter
 import com.example.appfutbolperu.database.TeamDB
 import com.example.appfutbolperu.models.Team
 import kotlinx.android.synthetic.main.fragment_save.view.*
-import kotlinx.android.synthetic.main.fragment_team.view.*
 
-class SaveFragment : Fragment(), TeamAdapter.OnItemClickListener {
+class SaveFragment : Fragment(), ProductAdapter.OnItemClickListener {
     var team: List<Team> = ArrayList()
     lateinit var recyclerView: RecyclerView
 
@@ -32,7 +31,7 @@ class SaveFragment : Fragment(), TeamAdapter.OnItemClickListener {
         team = TeamDB.getInstance(view.context).getTeamDAO().getAllTeams()
         recyclerView = view.rvTeamSave
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = TeamAdapter(team, view.context, this)
+        recyclerView.adapter = ProductAdapter(team, view.context, this)
     }
 
     override fun onItemClicked(team: Team) {

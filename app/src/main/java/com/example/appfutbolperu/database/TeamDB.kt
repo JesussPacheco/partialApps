@@ -13,7 +13,6 @@ abstract class TeamDB : RoomDatabase() {
     companion object {
 
         private var INSTANCE : TeamDB?= null
-
         fun getInstance(context: Context) : TeamDB {
             if (INSTANCE == null) {
                 INSTANCE = Room
