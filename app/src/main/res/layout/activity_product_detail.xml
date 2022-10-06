@@ -11,9 +11,10 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_marginStart="147dp"
-        android:layout_marginTop="118dp"
+        android:layout_marginTop="172dp"
         android:layout_marginEnd="136dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -31,7 +32,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivLogoDetail"
-        tools:text="equipo" />
+        tools:text="product" />
 
     <TextView
         android:id="@+id/tbVenueName"
@@ -43,7 +44,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNameDetail"
-        tools:text="estadio" />
+        tools:text="tipo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabSave"

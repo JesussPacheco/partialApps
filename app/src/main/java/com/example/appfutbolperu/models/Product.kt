@@ -13,7 +13,7 @@ class Product (
     @SerializedName("product_id")
     val productId: Int = 0,
 
-    @SerializedName("name")
+    @SerializedName("title")
     val name: String,
 
     @SerializedName("logo")
