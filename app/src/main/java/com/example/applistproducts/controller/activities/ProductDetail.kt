@@ -1,13 +1,13 @@
-package com.example.appfutbolperu.controller.activities
+package com.example.applistproducts.controller.activities
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.appfutbolperu.R
-import com.example.appfutbolperu.database.ProductDB
-import com.example.appfutbolperu.models.Product
+import com.example.applistproducts.R
+import com.example.applistproducts.database.ProductDB
+import com.example.applistproducts.models.Product
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso

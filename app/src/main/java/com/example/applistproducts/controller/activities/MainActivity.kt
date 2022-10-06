@@ -1,12 +1,12 @@
-package com.example.appfutbolperu.controller.activities
+package com.example.applistproducts.controller.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.Fragment
-import com.example.appfutbolperu.R
-import com.example.appfutbolperu.controller.fragments.SaveFragment
-import com.example.appfutbolperu.controller.fragments.ProductFragment
+import com.example.applistproducts.R
+import com.example.applistproducts.controller.fragments.SaveFragment
+import com.example.applistproducts.controller.fragments.ProductFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

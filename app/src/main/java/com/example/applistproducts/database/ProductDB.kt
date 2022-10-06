@@ -1,10 +1,10 @@
-package com.example.appfutbolperu.database
+package com.example.applistproducts.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.appfutbolperu.models.Product
+import com.example.applistproducts.models.Product
 
 @Database(entities = [Product::class], version = 1)
 abstract class ProductDB : RoomDatabase() {

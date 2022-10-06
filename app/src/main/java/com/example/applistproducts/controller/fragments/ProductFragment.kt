@@ -1,4 +1,4 @@
-package com.example.appfutbolperu.controller.fragments
+package com.example.applistproducts.controller.fragments
 
 import android.content.Context
 import android.content.Intent
@@ -10,12 +10,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appfutbolperu.R
-import com.example.appfutbolperu.adapter.ProductAdapter
-import com.example.appfutbolperu.controller.activities.ProductDetail
-import com.example.appfutbolperu.models.ApiResponseHeader
-import com.example.appfutbolperu.models.Product
-import com.example.appfutbolperu.network.ProductService
+import com.example.applistproducts.R
+import com.example.applistproducts.models.ApiResponseHeader
+import com.example.applistproducts.models.Product
+import com.example.applistproducts.network.ProductService
 import kotlinx.android.synthetic.main.fragment_product.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -51,8 +49,8 @@ class ProductFragment : Fragment(), ProductAdapter.OnItemClickListener {
         productService = retrofit.create(ProductService::class.java)
 
         val request = productService.getProducts(
-            "api-football-v1.p.rapidapi.com",
-            "d229813befmsh4c1646ad132a0b5p1313fcjsn9afecaefc97e")
+            "?=",
+            100, "69adc6491b9441419dcfc683cb54e7b5")
 
         request.enqueue(object : Callback<ApiResponseHeader> {
             override fun onFailure(call: Call<ApiResponseHeader>, t: Throwable) {

@@ -1,4 +1,4 @@
-package com.example.appfutbolperu.controller.fragments
+package com.example.applistproducts.controller.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.appfutbolperu.R
-import com.example.appfutbolperu.adapter.ProductAdapter
-import com.example.appfutbolperu.database.ProductDB
-import com.example.appfutbolperu.models.Product
+import com.example.applistproducts.R
+import com.example.applistproducts.adapter.ProductAdapter
+import com.example.applistproducts.database.ProductDB
+import com.example.applistproducts.models.Product
 import kotlinx.android.synthetic.main.fragment_save.view.*
 
 class SaveFragment : Fragment(), ProductAdapter.OnItemClickListener {

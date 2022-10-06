@@ -1,4 +1,4 @@
-package com.example.appfutbolperu.models
+package com.example.applistproducts.models
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -1,7 +1,7 @@
-package com.example.appfutbolperu.database
+package com.example.applistproducts.database
 
 import androidx.room.*
-import com.example.appfutbolperu.models.Product
+import com.example.applistproducts.models.Product
 
 @Dao
 interface ProductDAO {

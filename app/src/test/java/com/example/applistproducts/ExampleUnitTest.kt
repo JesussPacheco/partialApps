@@ -1,4 +1,4 @@
-package com.example.appfutbolperu
+package com.example.applistproducts
 
 import org.junit.Test
 
