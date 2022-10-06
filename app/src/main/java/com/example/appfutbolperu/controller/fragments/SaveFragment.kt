@@ -9,12 +9,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfutbolperu.R
 import com.example.appfutbolperu.adapter.ProductAdapter
-import com.example.appfutbolperu.database.TeamDB
-import com.example.appfutbolperu.models.Team
+import com.example.appfutbolperu.database.ProductDB
+import com.example.appfutbolperu.models.Product
 import kotlinx.android.synthetic.main.fragment_save.view.*
 
 class SaveFragment : Fragment(), ProductAdapter.OnItemClickListener {
-    var team: List<Team> = ArrayList()
+    var product: List<Product> = ArrayList()
     lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
@@ -28,13 +28,13 @@ class SaveFragment : Fragment(), ProductAdapter.OnItemClickListener {
     //Ctrl + O
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        team = TeamDB.getInstance(view.context).getTeamDAO().getAllTeams()
-        recyclerView = view.rvTeamSave
+        product = ProductDB.getInstance(view.context).getProductDAO().getAllProducts()
+        recyclerView = view.rvProductSave
         recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = ProductAdapter(team, view.context, this)
+        recyclerView.adapter = ProductAdapter(product, view.context, this)
     }
 
-    override fun onItemClicked(team: Team) {
+    override fun onItemClicked(product: Product) {
         TODO("Not yet implemented")
     }
 }

@@ -14,9 +14,9 @@ import com.example.appfutbolperu.R
 import com.example.appfutbolperu.adapter.ProductAdapter
 import com.example.appfutbolperu.controller.activities.ProductDetail
 import com.example.appfutbolperu.models.ApiResponseHeader
-import com.example.appfutbolperu.models.Team
-import com.example.appfutbolperu.network.TeamService
-import kotlinx.android.synthetic.main.fragment_team.*
+import com.example.appfutbolperu.models.Product
+import com.example.appfutbolperu.network.ProductService
+import kotlinx.android.synthetic.main.fragment_product.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,7 +24,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ProductFragment : Fragment(), ProductAdapter.OnItemClickListener {
-    var team: List<Team> = ArrayList()
+    var product: List<Product> = ArrayList()
     lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
@@ -32,27 +32,25 @@ class ProductFragment : Fragment(), ProductAdapter.OnItemClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_team, container, false)
+        return inflater.inflate(R.layout.fragment_product, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        recyclerView = rvTeams
-        loadTeams(view.context)
+        recyclerView = rvProducts
+        loadProducts(view.context)
     }
 
-    private fun loadTeams(context: Context) {
+    private fun loadProducts(context: Context) {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://api-football-v1.p.rapidapi.com/v2/teams/league/")
+            .baseUrl("https://api-football-v1.p.rapidapi.com/v2/products/league/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+        val productService: ProductService
+        productService = retrofit.create(ProductService::class.java)
 
-        //DECLARAMOS NUESTRO OBJETO TeamService
-        val teamService: TeamService
-        teamService = retrofit.create(TeamService::class.java)
-
-        val request = teamService.getTeams(
+        val request = productService.getProducts(
             "api-football-v1.p.rapidapi.com",
             "d229813befmsh4c1646ad132a0b5p1313fcjsn9afecaefc97e")
 
@@ -63,9 +61,9 @@ class ProductFragment : Fragment(), ProductAdapter.OnItemClickListener {
 
             override fun onResponse(call: Call<ApiResponseHeader>, responseDetails: Response<ApiResponseHeader>) {
                 if (responseDetails.isSuccessful) {
-                    val teams: List<Team> = responseDetails.body()!!.api.teams ?: ArrayList()
+                    val products: List<Product> = responseDetails.body()!!.api.products ?: ArrayList()
                     recyclerView.layoutManager = LinearLayoutManager(context)
-                    recyclerView.adapter = ProductAdapter(teams, context, this@ProductFragment)
+                    recyclerView.adapter = ProductAdapter(products, context, this@ProductFragment)
                 }
 
                 else{
@@ -75,9 +73,9 @@ class ProductFragment : Fragment(), ProductAdapter.OnItemClickListener {
         })
     }
 
-    override fun onItemClicked(team: Team) {
+    override fun onItemClicked(product: Product) {
         val intent = Intent(context, ProductDetail::class.java)
-        intent.putExtra("Team", team)
+        intent.putExtra("Product", product)
         startActivity(intent)
     }
 }

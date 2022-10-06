@@ -6,43 +6,43 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appfutbolperu.R
-import com.example.appfutbolperu.models.Team
+import com.example.appfutbolperu.models.Product
 import com.squareup.picasso.OkHttp3Downloader
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.prototype_team.view.*
+import kotlinx.android.synthetic.main.prototype_product.view.*
 
-class ProductAdapter(val teams: List<Team>, val context: Context, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
+class ProductAdapter(val products: List<Product>, val context: Context, val itemClickListener: OnItemClickListener): RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     class ViewHolder(val view: View): RecyclerView.ViewHolder(view) {
         val ivLogo = view.ivLogo
         val tvName = view.tvName
-        val cvTeam = view.cvTeam
+        val cvProduct = view.cvProduct
     }
 
     interface OnItemClickListener {
-        fun onItemClicked(team: Team)
+        fun onItemClicked(product: Product)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductAdapter.ViewHolder {
         val view = LayoutInflater.from(context)
-            .inflate(R.layout.prototype_team, parent, false)
+            .inflate(R.layout.prototype_product, parent, false)
 
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return teams.size
+        return products.size
     }
 
     override fun onBindViewHolder(holder: ProductAdapter.ViewHolder, position: Int) {
-        val team = teams[position]
-        holder.tvName.text = team.name
+        val product = products[position]
+        holder.tvName.text = product.name
 
         val picBuilder = Picasso.Builder(context)
         picBuilder.downloader(OkHttp3Downloader(context))
-        picBuilder.build().load(team.logo).into(holder.ivLogo)
+        picBuilder.build().load(product.logo).into(holder.ivLogo)
 
-        holder.cvTeam.setOnClickListener {
-            itemClickListener.onItemClicked(team)
+        holder.cvProduct.setOnClickListener {
+            itemClickListener.onItemClicked(product)
         }
     }
 }

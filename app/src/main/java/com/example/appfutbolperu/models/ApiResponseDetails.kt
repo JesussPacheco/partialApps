@@ -6,6 +6,6 @@ class ApiResponseDetails (
     @SerializedName("results")
     val results: Int,
 
-    @SerializedName("teams")
-    val teams: List<Team> //import.
+    @SerializedName("products")
+    val products: List<Product> //import.
 )

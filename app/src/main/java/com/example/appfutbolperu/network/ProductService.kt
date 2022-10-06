@@ -5,8 +5,8 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
 
-interface TeamService {
+interface ProductService {
     @GET("50")
-    fun getTeams(@Header("x-rapidapi-host")host: String,
+    fun getProducts(@Header("x-rapidapi-host")host: String,
     @Header("x-rapidapi-key")apiKey: String): Call<ApiResponseHeader>
 }

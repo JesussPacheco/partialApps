@@ -6,12 +6,12 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 @Entity(
-    tableName = "teams"
+    tableName = "products"
 )
-class Team (
+class Product (
     @PrimaryKey
-    @SerializedName("team_id")
-    val teamId: Int = 0,
+    @SerializedName("product_id")
+    val productId: Int = 0,
 
     @SerializedName("name")
     val name: String,
